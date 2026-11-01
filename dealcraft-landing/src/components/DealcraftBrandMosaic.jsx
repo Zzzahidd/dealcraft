@@ -23,8 +23,8 @@ export default function DealcraftBrandMosaic() {
         ))}
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-[#120e3d]/80 via-transparent to-[#4124fb]/30" />
-      <div className="absolute -top-24 -left-24 w-[360px] h-[360px] bg-[#6366f1]/35 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 w-[360px] h-[360px] bg-[#4124fb]/45 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-10 -left-10 sm:-top-24 sm:-left-24 w-[220px] h-[220px] sm:w-[360px] sm:h-[360px] bg-[#6366f1]/35 rounded-full blur-2xl sm:blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-10 -right-10 sm:-bottom-24 sm:-right-24 w-[220px] h-[220px] sm:w-[360px] sm:h-[360px] bg-[#4124fb]/45 rounded-full blur-2xl sm:blur-3xl pointer-events-none" />
     </div>
   );
 }

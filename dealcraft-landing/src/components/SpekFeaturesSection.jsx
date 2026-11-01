@@ -15,23 +15,23 @@ export default function SpekFeaturesSection() {
   const [activeShortcut, setActiveShortcut] = useState('alt-space');
 
   return (
-    <section id="features" className="w-full bg-white border-b border-neutral-200 font-sans">
-      <div className="max-w-7xl mx-auto border-x border-neutral-200">
+    <section id="features" className="w-full bg-white border-b border-neutral-200 font-sans overflow-x-hidden">
+      <div className="max-w-7xl mx-auto border-x-0 md:border-x border-neutral-200">
         
         {/* Section Header */}
-        <div className="px-6 py-10 sm:px-10 sm:py-12 border-b border-neutral-200 bg-neutral-50/40">
+        <div className="px-4 py-8 sm:px-10 sm:py-12 border-b border-neutral-200 bg-neutral-50/40">
           <div className="flex items-center gap-2 mb-2.5">
             <span className="w-4 h-[2px] bg-[#2563eb]"></span>
             <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#2563eb]">
               SYSTEM WORKSPACE
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-[-0.025em] leading-[1.12] text-neutral-900 font-serif">
-            Fast, Keyboard-First, and Always Responsive
-            <br />
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-normal tracking-[-0.025em] leading-[1.14] sm:leading-[1.12] text-neutral-900 font-serif break-words">
+            Fast, Keyboard-First, and Always Responsive{' '}
+            <br className="hidden sm:inline" />
             <span className="text-neutral-500 font-serif">Engineered for Operators Who Move at Full Speed</span>
           </h2>
-          <p className="mt-3.5 text-sm sm:text-base text-neutral-600 max-w-2xl font-normal leading-relaxed">
+          <p className="mt-3.5 text-sm sm:text-base text-neutral-600 max-w-2xl font-normal leading-relaxed break-words">
             Dealcraft pairs instant global hotkeys with visual pipeline management. Interact with the live timeline and calendar components below, or watch native recordings of the desktop client.
           </p>
         </div>
@@ -41,15 +41,15 @@ export default function SpekFeaturesSection() {
            ========================================================================= */}
         <div id="spotlight" className="grid grid-cols-1 lg:grid-cols-12 border-b border-neutral-200">
           {/* Left Column: Keyboard Shortcuts & Narrative */}
-          <div className="lg:col-span-4 p-7 sm:p-9 border-b lg:border-b-0 lg:border-r border-neutral-200 flex flex-col justify-center bg-white">
+          <div className="lg:col-span-4 p-5 sm:p-8 lg:p-9 border-b lg:border-b-0 lg:border-r border-neutral-200 flex flex-col justify-center bg-white min-w-0">
             <div>
               <div className="mb-3.5">
                 <span className="text-xs font-bold text-neutral-400 tracking-wider">01</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-normal tracking-tight text-neutral-900 font-serif mb-3.5">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal tracking-tight text-neutral-900 font-serif mb-3.5 break-words">
                 Keyboard Spotlight
               </h3>
-              <p className="text-sm text-neutral-600 leading-relaxed mb-5 font-normal">
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-5 font-normal break-words">
                 Press <kbd className="px-1.5 py-0.5 bg-neutral-100 text-neutral-900 text-xs border border-neutral-300 font-medium">Alt + Space</kbd> from anywhere in Windows to summon Dealcraft instantly. Search client accounts, update deal stages, or create follow-up tasks without reaching for your mouse.
               </p>
 
@@ -102,10 +102,10 @@ export default function SpekFeaturesSection() {
           </div>
 
           {/* Right Column: Screen Recording in Electric Cobalt Mosaic Frame */}
-          <div className="lg:col-span-8 p-4 sm:p-5 bg-neutral-50/50 flex items-center justify-center">
+          <div className="lg:col-span-8 p-2.5 sm:p-5 bg-neutral-50/50 flex items-center justify-center min-w-0 overflow-hidden">
             <div className="relative w-full overflow-hidden border border-neutral-200">
               <DealcraftBrandMosaic />
-              <div className="relative z-10 p-3 sm:p-5 flex items-center justify-center">
+              <div className="relative z-10 p-2 sm:p-5 flex items-center justify-center">
                 <div className="w-full max-w-[860px] border border-white/20 bg-black overflow-hidden shadow-sm">
                   <video
                     src="/assets/dealcraft-spotlight-demo.mp4"
@@ -128,15 +128,15 @@ export default function SpekFeaturesSection() {
            ========================================================================= */}
         <div id="timeline" className="grid grid-cols-1 lg:grid-cols-12 border-b border-neutral-200">
           {/* Left Column: Narrative Copy */}
-          <div className="lg:col-span-4 p-7 sm:p-9 border-b lg:border-b-0 lg:border-r border-neutral-200 flex flex-col justify-center bg-white">
+          <div className="lg:col-span-4 p-5 sm:p-8 lg:p-9 border-b lg:border-b-0 lg:border-r border-neutral-200 flex flex-col justify-center bg-white min-w-0">
             <div>
               <div className="mb-3.5">
                 <span className="text-xs font-bold text-neutral-400 tracking-wider">02</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-normal tracking-tight text-neutral-900 font-serif mb-3.5">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal tracking-tight text-neutral-900 font-serif mb-3.5 break-words">
                 Project Timeline &amp; Dependencies
               </h3>
-              <p className="text-sm text-neutral-600 leading-relaxed mb-5 font-normal">
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-5 font-normal break-words">
                 Map project deliverables across clear milestones. Click and drag timeline bars horizontally to adjust target dates, with automatic dependency line updates in real time.
               </p>
               <ul className="space-y-2 text-xs text-neutral-600 border-t border-neutral-100 pt-3.5">
@@ -157,10 +157,10 @@ export default function SpekFeaturesSection() {
           </div>
 
           {/* Right Column: Live Interactive Draggable Timeline Component */}
-          <div className="lg:col-span-8 p-4 sm:p-5 bg-neutral-50/50 flex items-center justify-center">
+          <div className="lg:col-span-8 p-2.5 sm:p-5 bg-neutral-50/50 flex items-center justify-center min-w-0 overflow-hidden">
             <div className="relative w-full overflow-hidden border border-neutral-200">
               <DealcraftBrandMosaic />
-              <div className="relative z-10 p-3 sm:p-5 flex items-center justify-center">
+              <div className="relative z-10 p-2 sm:p-5 flex items-center justify-center">
                 <div className="w-full max-w-[860px] border border-white/20 bg-black overflow-hidden shadow-sm aspect-video">
                   <InteractiveTimeline />
                 </div>
@@ -174,15 +174,15 @@ export default function SpekFeaturesSection() {
            ========================================================================= */}
         <div id="crm" className="grid grid-cols-1 lg:grid-cols-12 border-b border-neutral-200">
           {/* Left Column: Narrative Copy */}
-          <div className="lg:col-span-4 p-7 sm:p-9 border-b lg:border-b-0 lg:border-r border-neutral-200 flex flex-col justify-center bg-white">
+          <div className="lg:col-span-4 p-5 sm:p-8 lg:p-9 border-b lg:border-b-0 lg:border-r border-neutral-200 flex flex-col justify-center bg-white min-w-0">
             <div>
               <div className="mb-3.5">
                 <span className="text-xs font-bold text-neutral-400 tracking-wider">03</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-normal tracking-tight text-neutral-900 font-serif mb-3.5">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal tracking-tight text-neutral-900 font-serif mb-3.5 break-words">
                 Pipeline &amp; Account Management
               </h3>
-              <p className="text-sm text-neutral-600 leading-relaxed mb-5 font-normal">
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-5 font-normal break-words">
                 Track active enterprise accounts, pipeline values, and probability scores in a high-density desktop grid. Filter thousands of records instantly with zero cloud round-trips.
               </p>
               <ul className="space-y-2 text-xs text-neutral-600 border-t border-neutral-100 pt-3.5">
@@ -203,10 +203,10 @@ export default function SpekFeaturesSection() {
           </div>
 
           {/* Right Column: Screen Recording in Electric Cobalt Mosaic Frame */}
-          <div className="lg:col-span-8 p-4 sm:p-5 bg-neutral-50/50 flex items-center justify-center">
+          <div className="lg:col-span-8 p-2.5 sm:p-5 bg-neutral-50/50 flex items-center justify-center min-w-0 overflow-hidden">
             <div className="relative w-full overflow-hidden border border-neutral-200">
               <DealcraftBrandMosaic />
-              <div className="relative z-10 p-3 sm:p-5 flex items-center justify-center">
+              <div className="relative z-10 p-2 sm:p-5 flex items-center justify-center">
                 <div className="w-full max-w-[860px] border border-white/20 bg-black overflow-hidden shadow-sm">
                   <video
                     src="/assets/dealcraft-companies-demo.mp4"
@@ -229,15 +229,15 @@ export default function SpekFeaturesSection() {
            ========================================================================= */}
         <div id="calendar" className="grid grid-cols-1 lg:grid-cols-12 border-b border-neutral-200">
           {/* Left Column: Narrative Copy */}
-          <div className="lg:col-span-4 p-7 sm:p-9 border-b lg:border-b-0 lg:border-r border-neutral-200 flex flex-col justify-center bg-white">
+          <div className="lg:col-span-4 p-5 sm:p-8 lg:p-9 border-b lg:border-b-0 lg:border-r border-neutral-200 flex flex-col justify-center bg-white min-w-0">
             <div>
               <div className="mb-3.5">
                 <span className="text-xs font-bold text-neutral-400 tracking-wider">04</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-normal tracking-tight text-neutral-900 font-serif mb-3.5">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal tracking-tight text-neutral-900 font-serif mb-3.5 break-words">
                 Deliverable Scheduling &amp; Calendar
               </h3>
-              <p className="text-sm text-neutral-600 leading-relaxed mb-5 font-normal">
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-5 font-normal break-words">
                 Keep client deliverables, sprint deadlines, and review milestones organized. Click <strong>+ New task</strong> or the plus button on any calendar day to schedule work directly into the month grid.
               </p>
               <ul className="space-y-2 text-xs text-neutral-600 border-t border-neutral-100 pt-3.5">
@@ -258,10 +258,10 @@ export default function SpekFeaturesSection() {
           </div>
 
           {/* Right Column: Live Interactive Calendar Component */}
-          <div className="lg:col-span-8 p-4 sm:p-5 bg-neutral-50/50 flex items-center justify-center">
+          <div className="lg:col-span-8 p-2.5 sm:p-5 bg-neutral-50/50 flex items-center justify-center min-w-0 overflow-hidden">
             <div className="relative w-full overflow-hidden border border-neutral-200">
               <DealcraftBrandMosaic />
-              <div className="relative z-10 p-3 sm:p-5 flex items-center justify-center">
+              <div className="relative z-10 p-2 sm:p-5 flex items-center justify-center">
                 <div className="w-full max-w-[860px] border border-white/20 bg-black overflow-hidden shadow-sm aspect-video">
                   <InteractiveCalendar />
                 </div>
@@ -275,15 +275,15 @@ export default function SpekFeaturesSection() {
            ========================================================================= */}
         <div id="tasks" className="grid grid-cols-1 lg:grid-cols-12">
           {/* Left Column: Narrative Copy */}
-          <div className="lg:col-span-4 p-7 sm:p-9 border-b lg:border-b-0 lg:border-r border-neutral-200 flex flex-col justify-center bg-white">
+          <div className="lg:col-span-4 p-5 sm:p-8 lg:p-9 border-b lg:border-b-0 lg:border-r border-neutral-200 flex flex-col justify-center bg-white min-w-0">
             <div>
               <div className="mb-3.5">
                 <span className="text-xs font-bold text-neutral-400 tracking-wider">05</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-normal tracking-tight text-neutral-900 font-serif mb-3.5">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal tracking-tight text-neutral-900 font-serif mb-3.5 break-words">
                 Task Capture &amp; Backlog
               </h3>
-              <p className="text-sm text-neutral-600 leading-relaxed mb-5 font-normal">
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-5 font-normal break-words">
                 Prioritize incoming work and track sprint progress. Move tasks between Backlog and In Progress buckets with simple keyboard shortcuts and instant local state updates.
               </p>
               <ul className="space-y-2 text-xs text-neutral-600 border-t border-neutral-100 pt-3.5">
@@ -304,10 +304,10 @@ export default function SpekFeaturesSection() {
           </div>
 
           {/* Right Column: Screen Recording in Electric Cobalt Mosaic Frame */}
-          <div className="lg:col-span-8 p-4 sm:p-5 bg-neutral-50/50 flex items-center justify-center">
+          <div className="lg:col-span-8 p-2.5 sm:p-5 bg-neutral-50/50 flex items-center justify-center min-w-0 overflow-hidden">
             <div className="relative w-full overflow-hidden border border-neutral-200">
               <DealcraftBrandMosaic />
-              <div className="relative z-10 p-3 sm:p-5 flex items-center justify-center">
+              <div className="relative z-10 p-2 sm:p-5 flex items-center justify-center">
                 <div className="w-full max-w-[860px] border border-white/20 bg-black overflow-hidden shadow-sm">
                   <video
                     src="/assets/dealcraft-tasks-demo.mp4"

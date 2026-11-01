@@ -31,15 +31,17 @@ export default function TopNav() {
   return (
     <header className="w-full sticky top-0 z-50 bg-white">
       {/* 1. Announcement Bar: Matching Black CTA Button Color */}
-      <div className="w-full bg-black text-white border-b border-neutral-800 py-2 px-4 text-center">
+      <div className="w-full bg-black text-white border-b border-neutral-800 py-2 px-3 sm:px-4 text-center">
         <a
           href="/Dealcraft-Setup.exe?v=3.0"
           download="Dealcraft-Setup.exe"
-          className="group inline-flex items-center justify-center gap-2 text-[11px] sm:text-xs font-medium tracking-tight text-neutral-300 hover:text-white transition-colors"
+          className="group inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-medium tracking-tight text-neutral-300 hover:text-white transition-colors"
         >
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
           <span>
-            <strong className="text-white font-semibold">Dealcraft 2.0 is live.</strong> Native offline sales CRM and task workspace for high-velocity teams.
+            <strong className="text-white font-semibold">Dealcraft 2.0 is live.</strong>{' '}
+            <span className="hidden sm:inline">Native offline sales CRM and task workspace for high-velocity teams.</span>
+            <span className="sm:hidden">Native offline CRM &amp; workspace.</span>
           </span>
           <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 text-neutral-400 group-hover:text-white">
             &rarr;
@@ -54,12 +56,12 @@ export default function TopNav() {
         }`}
         aria-label="Main navigation"
       >
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-4">
           
           {/* Left: Brand */}
-          <div className="flex items-center">
+          <div className="flex items-center shrink-0">
             <a href="#" className="flex items-center group focus:outline-hidden focus-visible:ring-1 focus-visible:ring-black">
-              <span className="text-2xl font-serif font-semibold tracking-[-0.02em] text-neutral-900 select-none transition-opacity group-hover:opacity-80">
+              <span className="text-xl sm:text-2xl font-serif font-semibold tracking-[-0.02em] text-neutral-900 select-none transition-opacity group-hover:opacity-80">
                 Dealcraft
               </span>
             </a>
@@ -79,7 +81,7 @@ export default function TopNav() {
           </div>
 
           {/* Right: High-Converting Action Cluster */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <a
               href="#architecture"
               className="hidden sm:inline-block text-xs font-medium text-neutral-500 hover:text-neutral-900 transition-colors px-2 py-1"
@@ -90,7 +92,7 @@ export default function TopNav() {
             <a
               href="/Dealcraft-Setup.exe?v=3.0"
               download="Dealcraft-Setup.exe"
-              className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-black text-white text-xs font-semibold tracking-wider uppercase hover:bg-neutral-800 active:scale-[0.98] transition-all focus:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-black text-white text-[11px] sm:text-xs font-semibold tracking-wider uppercase hover:bg-neutral-800 active:scale-[0.98] transition-all focus:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 whitespace-nowrap"
             >
               <WindowsIcon className="w-3.5 h-3.5 fill-current" />
               <span>Download .exe</span>

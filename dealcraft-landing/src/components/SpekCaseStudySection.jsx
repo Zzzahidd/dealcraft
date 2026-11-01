@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function SpekCaseStudySection() {
   return (
-    <section id="case-study" className="w-full bg-white border-b border-neutral-200 font-sans py-16 sm:py-20">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="case-study" className="w-full bg-white border-b border-neutral-200 font-sans py-12 sm:py-20 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
         <div className="mb-8 sm:mb-10">
@@ -13,7 +13,7 @@ export default function SpekCaseStudySection() {
               PROVEN PERFORMANCE
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-[-0.025em] leading-[1.12] text-neutral-900 font-serif max-w-3xl">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-normal tracking-[-0.025em] leading-[1.14] sm:leading-[1.12] text-neutral-900 font-serif max-w-3xl break-words">
             Engineered for Operators Who Value Speed Above All
           </h2>
         </div>
@@ -23,12 +23,12 @@ export default function SpekCaseStudySection() {
           <div className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-neutral-200">
             
             {/* Column 1: Keyboard-First Execution */}
-            <div className="p-7 sm:p-8 flex flex-col justify-between bg-white min-h-[260px]">
+            <div className="p-5 sm:p-8 flex flex-col justify-between bg-white min-h-[220px] sm:min-h-[260px] min-w-0">
               <div>
                 <span className="text-xs font-bold text-neutral-900 tracking-wider block mb-3 uppercase">
                   Global Keyboard Flow
                 </span>
-                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed font-sans mb-5">
+                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed font-sans mb-5 break-words">
                   Every deal stage, client account, and follow-up responds to direct keystrokes. Press Alt + Space anywhere in Windows to search your database, update pipeline values, and log meeting notes without opening a browser or waiting on page loads.
                 </p>
               </div>
@@ -43,12 +43,12 @@ export default function SpekCaseStudySection() {
             </div>
 
             {/* Column 2: Local NVMe Storage */}
-            <div className="p-7 sm:p-8 flex flex-col justify-between bg-white min-h-[260px]">
+            <div className="p-5 sm:p-8 flex flex-col justify-between bg-white min-h-[220px] sm:min-h-[260px] min-w-0">
               <div>
                 <span className="text-xs font-bold text-neutral-900 tracking-wider block mb-3 uppercase">
                   Local SQLite Storage
                 </span>
-                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed font-sans mb-5">
+                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed font-sans mb-5 break-words">
                   Web CRMs route every filter, sort, and status change through distant servers. Dealcraft writes directly to an embedded SQLite database on your local drive. Search thousands of accounts in 0.4 milliseconds and review deals anywhere, even without Wi-Fi.
                 </p>
               </div>
@@ -63,12 +63,12 @@ export default function SpekCaseStudySection() {
             </div>
 
             {/* Column 3: Large Bold Metric 1 - 0.4ms */}
-            <div className="p-7 sm:p-8 flex flex-col justify-between bg-white min-h-[260px]">
+            <div className="p-5 sm:p-8 flex flex-col justify-between bg-white min-h-[200px] sm:min-h-[260px] min-w-0">
               <div>
                 <span className="text-xs font-medium text-neutral-500 tracking-tight block mb-1.5">
                   Local database query speed
                 </span>
-                <div className="text-5xl sm:text-6xl font-normal text-neutral-900 tracking-tight font-serif my-4 sm:my-5">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-normal text-neutral-900 tracking-tight font-serif my-3 sm:my-5">
                   0.4ms
                 </div>
               </div>
@@ -78,12 +78,12 @@ export default function SpekCaseStudySection() {
             </div>
 
             {/* Column 4: Large Bold Metric 2 - <65MB */}
-            <div className="p-7 sm:p-8 flex flex-col justify-between bg-white min-h-[260px]">
+            <div className="p-5 sm:p-8 flex flex-col justify-between bg-white min-h-[200px] sm:min-h-[260px] min-w-0">
               <div>
                 <span className="text-xs font-medium text-neutral-500 tracking-tight block mb-1.5">
                   Native client memory footprint
                 </span>
-                <div className="text-5xl sm:text-6xl font-normal text-neutral-900 tracking-tight font-serif my-4 sm:my-5">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-normal text-neutral-900 tracking-tight font-serif my-3 sm:my-5">
                   &lt;65MB
                 </div>
               </div>
@@ -95,13 +95,13 @@ export default function SpekCaseStudySection() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-neutral-200 px-6 py-4 sm:px-8 bg-neutral-50/60 flex flex-wrap items-center justify-between gap-4 text-xs">
-            <div className="text-neutral-700 font-medium">
+          <div className="border-t border-neutral-200 px-4 py-3.5 sm:px-8 sm:py-4 bg-neutral-50/60 flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs">
+            <div className="text-neutral-700 font-medium break-words">
               Dealcraft runs locally on Windows with zero cloud latency. Built for founders and deal teams who move fast.
             </div>
             <a
               href="#features"
-              className="inline-flex items-center gap-1.5 font-semibold text-neutral-900 hover:text-blue-600 transition-colors group"
+              className="inline-flex items-center gap-1.5 font-semibold text-neutral-900 hover:text-blue-600 transition-colors group shrink-0"
             >
               <span>Explore features</span>
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">

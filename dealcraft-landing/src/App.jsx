@@ -13,7 +13,7 @@ import FooterSection from './components/FooterSection';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-neutral-900 selection:bg-neutral-900 selection:text-white">
+    <div className="min-h-screen bg-white text-neutral-900 selection:bg-neutral-900 selection:text-white w-full max-w-full overflow-x-hidden">
       {/* 1. Top Announcement Bar & Clean White Navbar (Black CTA button) */}
       <TopNav />
 

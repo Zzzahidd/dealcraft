@@ -6,26 +6,26 @@ export default function FooterSection() {
   };
 
   return (
-    <footer id="pricing" className="bg-white text-neutral-900 border-t border-neutral-200 font-sans">
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-neutral-200">
+    <footer id="pricing" className="bg-white text-neutral-900 border-t border-neutral-200 font-sans w-full max-w-full overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-8 sm:pt-16 sm:pb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-neutral-200">
           {/* Brand Info */}
-          <div className="md:col-span-2 space-y-4">
+          <div className="sm:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
               <span className="text-2xl font-serif font-semibold tracking-[-0.02em] text-neutral-900">
                 Dealcraft
               </span>
             </div>
             
-            <p className="text-xs sm:text-sm text-neutral-600 max-w-md leading-relaxed font-sans">
+            <p className="text-xs sm:text-sm text-neutral-600 max-w-md leading-relaxed font-sans break-words">
               The desktop sales CRM and project execution workspace. Built for founders, account executives, and operators who require native speed.
             </p>
             
-            <div className="pt-2 flex items-center gap-3">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
                 href="/Dealcraft-Setup.exe?v=3.0"
                 download="Dealcraft-Setup.exe"
-                className="inline-flex items-center justify-center px-5 py-2.5 bg-black text-white text-xs font-semibold tracking-wider uppercase rounded-none hover:bg-neutral-800 transition-colors"
+                className="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 bg-black text-white text-xs font-semibold tracking-wider uppercase rounded-none hover:bg-neutral-800 transition-colors"
               >
                 Download .exe
               </a>
@@ -50,12 +50,12 @@ export default function FooterSection() {
                 </a>
               </li>
               <li>
-                <a href="#accounts" className="hover:text-black transition-colors">
+                <a href="#crm" className="hover:text-black transition-colors">
                   Accounts &amp; Deal Dossier
                 </a>
               </li>
               <li>
-                <a href="#notes" className="hover:text-black transition-colors">
+                <a href="#features" className="hover:text-black transition-colors">
                   Meeting Notes &amp; Docs
                 </a>
               </li>
@@ -89,12 +89,12 @@ export default function FooterSection() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-black transition-colors">
+                <a href="#architecture" className="hover:text-black transition-colors">
                   Security &amp; Encryption
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-black transition-colors">
+                <a href="#features" className="hover:text-black transition-colors">
                   Desktop Changelog
                 </a>
               </li>
@@ -103,10 +103,10 @@ export default function FooterSection() {
         </div>
 
         {/* Bottom Metadata & Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500 font-sans">
-          <div className="flex items-center gap-4">
+        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-neutral-500 font-sans">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4">
             <span>&copy; {new Date().getFullYear()} Dealcraft Technologies, Inc.</span>
-            <span>·</span>
+            <span className="hidden sm:inline">·</span>
             <span className="text-neutral-600">Pure Local Native Desktop Client</span>
           </div>
 
