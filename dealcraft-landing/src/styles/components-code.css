@@ -1,0 +1,1281 @@
+/* ============================================================
+   GR8R STUDIO / DEALCRAFT — UI COMPONENT STYLES
+   Direct port of design tokens and stylesheets from components code/
+   ============================================================ */
+
+/* Design Tokens & Surfaces */
+.gr8r-ui,
+[data-theme='dark'] .gr8r-ui,
+.gr8r-ui[data-theme='dark'] {
+  /* Surfaces (Dark mode matching screenshots) */
+  --bg: #141413;
+  --bg-side: #181817;
+  --surface: #1e1e1d;
+  --surface-2: #262624;
+  --surface-3: #2f2f2c;
+  --sunken: #181817;
+  --overlay: rgba(0, 0, 0, 0.65);
+
+  /* Borders & Dividers */
+  --border: #2c2b29;
+  --border-strong: #3d3b37;
+  --divider: #262523;
+
+  /* Typography Colors */
+  --text: #eceae5;
+  --text-2: #b5b2ab;
+  --text-3: #8a8780;
+  --text-4: #6b6861;
+  --text-inv: #151514;
+
+  /* Primary Accent (Purple / Electric Indigo) */
+  --acc-l: #4b5bd6;
+  --acc-d: #8e9af3;
+  --accent: #5a67d8;
+  --on-accent: #ffffff;
+  --accent-soft: rgba(90, 103, 216, 0.15);
+  --accent-line: rgba(90, 103, 216, 0.38);
+
+  /* Semantic Colors */
+  --green: #4ade80;
+  --amber: #fbbf24;
+  --red: #f87171;
+  --blue: #60a5fa;
+  --violet: #a78bfa;
+  --teal: #2dd4bf;
+  --rose: #f472b6;
+  --orange: #fb923c;
+  --gray: #8a867e;
+  --green-soft: rgba(74, 222, 128, 0.12);
+  --amber-soft: rgba(251, 191, 36, 0.12);
+  --red-soft: rgba(248, 113, 113, 0.12);
+
+  /* Task Status Tokens */
+  --st-backlog: #a29e96;
+  --st-todo: #7c7870;
+  --st-progress: #fbbf24;
+  --st-review: #a78bfa;
+  --st-done: #4ade80;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--border);
+  --shadow-pop: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 2px 6px -2px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--border);
+  --shadow-drag: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--border-strong);
+
+  /* Radii */
+  --r-xs: 3px;
+  --r-sm: 5px;
+  --r: 7px;
+  --r-lg: 9px;
+  --r-full: 9999px;
+
+  /* Spacing Scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+
+  /* Typography Scale */
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --fs-2xs: 10px;
+  --fs-xs: 11.5px;
+  --fs-sm: 12.5px;
+  --fs: 13.5px;
+  --fs-md: 14.5px;
+  --fs-lg: 16px;
+  --fs-xl: 18px;
+  --fs-2xl: 22px;
+
+  /* Component Dimensions */
+  --h-xs: 22px;
+  --h-sm: 26px;
+  --h-md: 30px;
+  --h-lg: 36px;
+  --row-h: 36px;
+  --gutter: 16px;
+
+  /* Motion Timing */
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --dur: 140ms;
+
+  /* Applied Container Reset */
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  color: var(--text);
+  background: var(--bg);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.gr8r-ui *,
+.gr8r-ui *::before,
+.gr8r-ui *::after {
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   AVATAR & AVATAR STACK (from 02-avatar-and-stack.md)
+   ============================================================ */
+.gr8r-ui .av {
+  --s: 24px;
+  width: var(--s);
+  height: var(--s);
+  border-radius: var(--r-sm);
+  background: var(--c, var(--surface-3));
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  position: relative;
+  user-select: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+.gr8r-ui .av.xs { --s: 18px; font-size: 9px; border-radius: var(--r-xs); }
+.gr8r-ui .av.sm { --s: 22px; font-size: 10px; }
+.gr8r-ui .av.md { --s: 28px; font-size: 12px; }
+.gr8r-ui .av.lg { --s: 36px; font-size: 14px; }
+.gr8r-ui .av.xl { --s: 48px; font-size: 18px; border-radius: var(--r); }
+.gr8r-ui .av.circle { border-radius: 50%; }
+
+.gr8r-ui .av.empty {
+  background: var(--surface-2);
+  color: var(--text-4);
+  border: 1px dashed var(--border-strong);
+  box-shadow: none;
+}
+
+.gr8r-ui .av.more {
+  background: var(--surface-3);
+  color: var(--text-2);
+  font-weight: 500;
+  font-size: 10.5px;
+}
+
+.gr8r-ui .av.presence::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border: 1.5px solid var(--surface);
+  border-radius: 50%;
+}
+
+.gr8r-ui .avs {
+  display: inline-flex;
+  align-items: center;
+}
+
+.gr8r-ui .avs .av {
+  box-shadow: 0 0 0 2px var(--surface);
+  transition: transform 120ms ease;
+}
+
+.gr8r-ui .avs .av:not(:first-child) {
+  margin-left: -6px;
+}
+
+/* ============================================================
+   STATUS & PRIORITY (from 03-status-and-priority.md)
+   ============================================================ */
+.gr8r-ui .pillbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: var(--r-full);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: var(--fs-xs);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background var(--dur), border-color var(--dur);
+  user-select: none;
+}
+
+.gr8r-ui .pillbtn:hover {
+  background: var(--surface-3);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+/* ============================================================
+   BADGES, LABELS & PROGRESS (from 04-badges-labels-progress.md)
+   ============================================================ */
+.gr8r-ui .lbl {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 1px 7px;
+  border-radius: var(--r-xs);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: color-mix(in srgb, var(--c, var(--border)) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c, var(--border)) 28%, transparent);
+  white-space: nowrap;
+}
+
+.gr8r-ui .lbl i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--c, var(--text-3));
+  flex-shrink: 0;
+}
+
+.gr8r-ui .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 7px;
+  border-radius: var(--r-sm);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  line-height: 1.2;
+}
+
+.gr8r-ui .badge.green {
+  color: var(--green);
+  background: color-mix(in srgb, var(--green) 12%, transparent);
+  border-color: color-mix(in srgb, var(--green) 24%, transparent);
+}
+
+.gr8r-ui .badge.amber {
+  color: var(--amber);
+  background: color-mix(in srgb, var(--amber) 14%, transparent);
+  border-color: color-mix(in srgb, var(--amber) 28%, transparent);
+}
+
+.gr8r-ui .badge.gray {
+  color: var(--text-4);
+  background: var(--surface-3);
+  border-color: var(--border);
+}
+
+.gr8r-ui .prog {
+  height: 5px;
+  background: var(--surface-3);
+  border-radius: var(--r-full);
+  overflow: hidden;
+  width: 100%;
+}
+
+.gr8r-ui .prog-bar {
+  height: 100%;
+  border-radius: var(--r-full);
+  background: var(--c, var(--accent));
+  transition: width 300ms var(--ease);
+}
+
+/* ============================================================
+   BUTTONS & INPUTS (from 05-buttons-and-inputs.md)
+   ============================================================ */
+.gr8r-ui .btn {
+  --h: var(--h-md);
+  height: var(--h);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 11px;
+  border-radius: var(--r-sm);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background var(--dur), border-color var(--dur), color var(--dur), box-shadow var(--dur);
+  border: 1px solid transparent;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.gr8r-ui .btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.gr8r-ui .btn-sm { --h: var(--h-sm); padding: 0 8px; font-size: var(--fs-xs); }
+.gr8r-ui .btn-lg { --h: var(--h-lg); padding: 0 14px; font-size: var(--fs); }
+.gr8r-ui .btn-block { width: 100%; }
+
+.gr8r-ui .btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.gr8r-ui .btn-primary:hover {
+  background: color-mix(in srgb, var(--accent) 88%, #fff);
+}
+
+.gr8r-ui .btn-secondary {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+.gr8r-ui .btn-secondary:hover {
+  background: var(--surface-2);
+}
+
+.gr8r-ui .btn-ghost {
+  color: var(--text-2);
+  background: transparent;
+}
+
+.gr8r-ui .btn-ghost:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.gr8r-ui .btn-ghost.on {
+  background: var(--surface-3);
+  color: var(--text);
+}
+
+.gr8r-ui .ibtn {
+  --s: 26px;
+  width: var(--s);
+  height: var(--s);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-sm);
+  color: var(--text-3);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background var(--dur), color var(--dur);
+  flex-shrink: 0;
+}
+
+.gr8r-ui .ibtn:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.gr8r-ui .inwrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
+.gr8r-ui .inwrap svg {
+  position: absolute;
+  left: 8px;
+  pointer-events: none;
+  color: var(--text-4);
+}
+
+.gr8r-ui .inwrap input {
+  width: 100%;
+  height: var(--h-sm);
+  padding: 0 8px 0 26px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-xs);
+  outline: none;
+  transition: border-color var(--dur);
+}
+
+.gr8r-ui .inwrap input:focus {
+  border-color: var(--accent);
+}
+
+.gr8r-ui .inwrap input::placeholder {
+  color: var(--text-4);
+}
+
+/* ============================================================
+   TABS & SEGMENTED CONTROL (from 06-tabs-and-segmented-control.md)
+   ============================================================ */
+.gr8r-ui .seg {
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 2px;
+  border-radius: var(--r-sm);
+  gap: 1px;
+}
+
+.gr8r-ui .seg button {
+  height: 22px;
+  padding: 0 9px;
+  border-radius: var(--r-xs);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--text-3);
+  transition: background var(--dur), color var(--dur), box-shadow var(--dur);
+  user-select: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.gr8r-ui .seg button:hover {
+  color: var(--text);
+}
+
+.gr8r-ui .seg button.on {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.gr8r-ui .tabs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.gr8r-ui .tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.gr8r-ui .tab {
+  height: 34px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--text-3);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+  transition: color var(--dur), border-color var(--dur);
+  cursor: pointer;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.gr8r-ui .tab:hover {
+  color: var(--text);
+}
+
+.gr8r-ui .tab.on,
+.gr8r-ui .tab[aria-current='page'] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+/* ============================================================
+   PANEL CONTAINER (Common Wrapper)
+   ============================================================ */
+.gr8r-ui .panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* ============================================================
+   10. TIMELINE VIEW (from 10-screen-timeline-view.md)
+   ============================================================ */
+.gr8r-ui .tl {
+  display: flex;
+  height: 380px;
+  background: var(--bg);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+}
+
+.gr8r-ui .tl-left {
+  width: 260px;
+  min-width: 260px;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.gr8r-ui .tl-head {
+  height: 48px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-3);
+  padding: 0 14px;
+}
+
+.gr8r-ui .tl-rows {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.gr8r-ui .tl-row {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 8px;
+  border-bottom: 1px solid var(--divider);
+  font-size: var(--fs-xs);
+  color: var(--text);
+  cursor: pointer;
+  transition: background var(--dur);
+}
+
+.gr8r-ui .tl-row:hover {
+  background: var(--surface-2);
+}
+
+.gr8r-ui .tl-row.g {
+  font-weight: 600;
+  background: var(--surface-2);
+  color: var(--text);
+  gap: 6px;
+  cursor: default;
+}
+
+.gr8r-ui .tl-row .trunc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gr8r-ui .tl-right {
+  flex: 1;
+  overflow: auto;
+  position: relative;
+}
+
+.gr8r-ui .tl-months {
+  display: flex;
+  height: 24px;
+  border-bottom: 1px solid var(--divider);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-2);
+  padding-left: 6px;
+}
+
+.gr8r-ui .tl-days {
+  display: flex;
+  height: 24px;
+  font-size: 10px;
+  color: var(--text-3);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.gr8r-ui .tl-days > div {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--divider);
+}
+
+.gr8r-ui .tl-days > div.today {
+  color: var(--on-accent);
+  font-weight: 700;
+  background: var(--accent);
+}
+
+.gr8r-ui .tl-grid {
+  position: relative;
+  background-image: linear-gradient(to right, var(--divider) 1px, transparent 1px);
+  background-size: 28px 100%;
+}
+
+.gr8r-ui .tl-rowbg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 32px;
+  border-bottom: 1px solid var(--divider);
+}
+
+.gr8r-ui .tl-rowbg.g {
+  background: color-mix(in srgb, var(--surface-2) 60%, transparent);
+}
+
+.gr8r-ui .tl-today {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.gr8r-ui .ms-w {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.gr8r-ui .ms {
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px var(--surface);
+}
+
+.gr8r-ui .ms-l {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gr8r-ui .bar {
+  position: absolute;
+  height: 20px;
+  background: color-mix(in srgb, var(--c, var(--accent)) 22%, var(--surface));
+  border: 1px solid var(--c, var(--accent));
+  border-radius: var(--r-xs);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 6px;
+  font-size: 10.5px;
+  color: var(--text);
+  overflow: hidden;
+  z-index: 2;
+  cursor: grab;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur), box-shadow var(--dur);
+  user-select: none;
+}
+
+.gr8r-ui .bar:active {
+  cursor: grabbing;
+}
+
+.gr8r-ui .bar:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card);
+}
+
+.gr8r-ui .bar.done {
+  opacity: 0.65;
+  border-style: dashed;
+}
+
+.gr8r-ui .bar .pf {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: color-mix(in srgb, var(--c, var(--accent)) 40%, transparent);
+  pointer-events: none;
+}
+
+.gr8r-ui .bar-lbl {
+  position: absolute;
+  font-size: 10px;
+  color: var(--text-2);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gr8r-ui .tl-deps {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ============================================================
+   11. CALENDAR VIEW (from 11-screen-calendar-view.md)
+   ============================================================ */
+.gr8r-ui .cal {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.gr8r-ui .cal-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  flex-wrap: wrap;
+}
+
+.gr8r-ui .cal-toolbar h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 6px;
+  color: var(--text);
+}
+
+.gr8r-ui .cal-legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--text-2);
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.gr8r-ui .cal-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gr8r-ui .pdot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c, var(--accent));
+  flex-shrink: 0;
+}
+
+.gr8r-ui .cal-h {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-align: left;
+}
+
+.gr8r-ui .cal-h > div {
+  padding: 6px 8px;
+}
+
+.gr8r-ui .cal-g {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--border);
+  gap: 1px;
+}
+
+.gr8r-ui .cday {
+  min-height: 82px;
+  background: var(--surface);
+  padding: 4px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  transition: background var(--dur);
+}
+
+.gr8r-ui .cday:hover {
+  background: var(--surface-2);
+}
+
+.gr8r-ui .cday.out {
+  background: var(--sunken);
+  opacity: 0.5;
+}
+
+.gr8r-ui .cday.today .dn {
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 700;
+  border-radius: var(--r-full);
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gr8r-ui .cday .dn {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-2);
+  margin-bottom: 2px;
+}
+
+.gr8r-ui .cday .add {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  opacity: 0;
+  transition: opacity var(--dur);
+}
+
+.gr8r-ui .cday:hover .add {
+  opacity: 1;
+}
+
+.gr8r-ui .cev {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 5px;
+  border-radius: var(--r-xs);
+  font-size: 10.5px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--c, var(--border)) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--c, var(--border)) 30%, transparent);
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.gr8r-ui .cev .trunc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gr8r-ui .cev.done {
+  opacity: 0.55;
+  text-decoration: line-through;
+}
+
+/* ============================================================
+   12. MEMBERS VIEW (from 12-screen-members-view.md)
+   ============================================================ */
+.gr8r-ui .page-members {
+  width: 100%;
+  padding: 16px;
+}
+
+.gr8r-ui .members-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.gr8r-ui .members-header h1 {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 2px;
+  color: var(--text);
+}
+
+.gr8r-ui .members-header p {
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+  margin: 0;
+}
+
+.gr8r-ui .members-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.gr8r-ui .perm-t {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--fs-xs);
+}
+
+.gr8r-ui .perm-t th {
+  padding: 8px 12px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+  white-space: nowrap;
+}
+
+.gr8r-ui .perm-t td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--divider);
+  color: var(--text);
+  vertical-align: middle;
+}
+
+.gr8r-ui .perm-t tr:hover td {
+  background: var(--surface-2);
+}
+
+.gr8r-ui .perm-t tr:last-child td {
+  border-bottom: none;
+}
+
+.gr8r-ui .perm-t .num {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-2);
+}
+
+.gr8r-ui .member-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gr8r-ui .member-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.gr8r-ui .member-name {
+  font-weight: 500;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gr8r-ui .member-email {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.gr8r-ui .member-self {
+  font-weight: 400;
+  color: var(--text-3);
+}
+
+.gr8r-ui .team-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-2);
+  font-size: 11.5px;
+}
+
+/* ============================================================
+   13. PROJECT TASKS LIST VIEW (from 13-screen-project-tasks-list.md)
+   ============================================================ */
+.gr8r-ui .proj-h {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px 0;
+}
+
+.gr8r-ui .proj-h .t {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.gr8r-ui .proj-h h1 {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--text);
+}
+
+.gr8r-ui .grp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+  cursor: pointer;
+}
+
+.gr8r-ui .grp .cnt {
+  font-size: 10px;
+  color: var(--text-4);
+  font-weight: 500;
+}
+
+.gr8r-ui .tlist {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gr8r-ui .thead,
+.gr8r-ui .trow {
+  display: grid;
+  grid-template-columns: 24px 30px minmax(200px, 1fr) 110px 140px 96px 140px 32px;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  gap: 6px;
+}
+
+.gr8r-ui .thead {
+  min-height: 28px;
+  font-size: 10.5px;
+  color: var(--text-3);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.gr8r-ui .trow {
+  border-bottom: 1px solid var(--divider);
+  background: var(--surface);
+  transition: background var(--dur);
+  font-size: var(--fs-xs);
+}
+
+.gr8r-ui .trow:hover {
+  background: var(--surface-2);
+}
+
+.gr8r-ui .trow .handle {
+  color: var(--text-4);
+  cursor: grab;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gr8r-ui .trow:hover .handle {
+  opacity: 1;
+}
+
+.gr8r-ui .trow .key {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--text-3);
+  margin-right: 4px;
+}
+
+.gr8r-ui .trow .tt {
+  font-size: var(--fs-xs);
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gr8r-ui .trow:hover .tt {
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+}
+
+.gr8r-ui .trow.done .tt {
+  color: var(--text-3);
+  text-decoration: line-through;
+}
+
+/* ============================================================
+   14. TEAM DETAIL VIEW (from 14-screen-team-detail-view.md)
+   ============================================================ */
+.gr8r-ui .page-team {
+  width: 100%;
+  padding: 16px;
+}
+
+.gr8r-ui .team-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gr8r-ui .team-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gr8r-ui .team-icon-lg {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--r);
+  background: color-mix(in srgb, var(--c, var(--violet)) 18%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--c, var(--violet)) 35%, transparent);
+  color: var(--c, var(--violet));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gr8r-ui .team-title h1 {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  margin: 0 0 2px;
+  color: var(--text);
+}
+
+.gr8r-ui .team-title p {
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+  margin: 0;
+}
+
+.gr8r-ui .grid2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 860px) {
+  .gr8r-ui .grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gr8r-ui .panel-h {
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.gr8r-ui .panel-h h2 {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+
+.gr8r-ui .panel-h .faint {
+  font-size: 11px;
+  color: var(--text-4);
+  font-weight: 500;
+}
+
+.gr8r-ui .mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--divider);
+  font-size: var(--fs-xs);
+  transition: background var(--dur);
+  cursor: pointer;
+}
+
+.gr8r-ui .mini:last-child {
+  border-bottom: none;
+}
+
+.gr8r-ui .mini:hover {
+  background: var(--surface-2);
+}
+
+.gr8r-ui .mini .tt {
+  font-weight: 500;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.gr8r-ui .mini .pj-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+/* ============================================================
+   CRM / COMPANIES TABLE (Matching Image 2 & find_companies_frame)
+   ============================================================ */
+.gr8r-ui .crm-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gr8r-ui .kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .gr8r-ui .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gr8r-ui .kpi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+}
+
+.gr8r-ui .kpi-card .kpi-lbl {
+  font-size: 10.5px;
+  color: var(--text-3);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.gr8r-ui .kpi-card .kpi-val {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gr8r-ui .kpi-card .kpi-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: var(--r-xs);
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+}

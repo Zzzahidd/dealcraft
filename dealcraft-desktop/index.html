@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Dealcraft</title>
+    <meta name="description" content="Dealcraft: Unified calm project workspace and sales CRM desktop application." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap"
+      media="print"
+      data-font
+    />
+    <style>
+      html, body {
+        background-color: #1a1a19;
+        color: #eceae5;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      @media (prefers-color-scheme: light) {
+        html:not([data-theme='dark']), body:not([data-theme='dark']) {
+          background-color: #fbfaf8;
+          color: #1d1c1a;
+        }
+      }
+      :root[data-theme='light'] html, :root[data-theme='light'] body {
+        background-color: #fbfaf8 !important;
+        color: #1d1c1a !important;
+      }
+      :root[data-theme='dark'] html, :root[data-theme='dark'] body {
+        background-color: #1a1a19 !important;
+        color: #eceae5 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" aria-live="off"></div>
+    <div id="layer"></div>
+    <div id="toasts" aria-live="polite"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
